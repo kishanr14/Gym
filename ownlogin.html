@@ -1,0 +1,246 @@
+<html>
+<head>
+<script>
+	function logincheck()
+{
+	oname=document.login.oname.value;
+	buid=document.login.buid.value;
+
+ 	if(oname=="")
+	{
+	alert("please Enter User Name");
+	document.login.oname.focus();
+	return false;
+	}
+	else{
+	var exp=/^[a-zA-Z]+$/;
+	if(!oname.match(exp))
+	{
+	alert("Name should be alphabet only");
+	document.login.oname.foucs();
+	return false;
+}
+}
+
+	if(buid=="")
+				{
+					alert("Please Enter Business Id");
+					document.login.buid.focus();
+					return false;
+				}
+}
+</script>
+
+<style>
+
+.buttons a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:relative;
+		top:25px;
+		left:1220px;
+	       }
+
+	.buttons a:hover{
+		background:black;
+		color:white;
+		}
+
+.button1 a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:fixed;
+		top:70px;
+		left:1120px;
+	       }
+
+	.button1 a:hover{
+		background:black;
+		color:white;
+		}
+
+
+
+
+header
+{
+   background-color:black;
+   color:white;
+   text-align:center;
+   right:0px;
+   position:fixed;
+   width:100%;
+   top:0px;
+   font-size:20px;
+   
+}
+
+header h1{
+margin:0;
+font-size:20px;
+}
+
+body
+{
+    font-family: Arial;
+    background-image:url("gym2.png");
+    background-size:cover;
+    width:100
+}
+
+.title
+{
+    position:absolute;
+    left:390px;
+    top:10px;
+    color:white;
+}
+
+.title h1
+{
+    font-size:50px;
+}
+
+.loginbox
+{
+    width:350px;
+    height:340px;
+    background: rgba(0, 0, 0, 0.7); /* dark transparent background */
+    border-radius:15px;
+    padding:50px;
+    position:fixed;
+    right:560px;
+    top:100px;
+
+    /* new styling */
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); /* golden glow */
+    border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+
+
+input[type=text], input[type=password]
+{
+    width:100%;
+    height:35px;
+    border-radius:5px;
+    border:1px solid gray;
+    margin-top:8px;
+}
+
+button
+{
+    width:100%;
+    height:40px;
+    background:#1e6bd6;
+    border:none;
+    color:white;
+    font-size:16px;
+    border-radius:5px;
+    margin-top:15px;
+}
+
+a
+{
+    text-decoration:none;
+    font-size:13px;
+}
+
+img
+{
+   border=none;
+   border-radius:0px;
+   height=60px;
+   width=60px;
+   position:fixed;
+   left:0px;
+   top:-80px;
+}
+
+footer
+{ 
+   background-color:black;
+   color:white;
+   text-align:center;
+   position:fixed;
+   bottom:0px;
+   width:100%;
+   left:0;
+   font-size:20px;
+}
+   
+
+</style>
+
+</head>
+
+<body>
+<img src=gym3.png>
+
+<div class="title">
+
+<header>
+<h1>GYM    MANAGEMENT    SYSTEM</h1>
+</header>
+
+</div>
+
+
+<div class="loginbox">
+
+
+
+<label><center><h2>LOG IN FORM</label></h2></center><br>
+<form method="post" action="ownche.php" name="login" onsubmit="return logincheck()">
+
+
+<label>Owner Name</label><br>
+<input type="text"  name="oname" placeholder="Enter your Ownername">
+
+<br><br>
+
+<label>Business Id</label><br>
+<input type="password"  name="buid" placeholder="Enter Business Id">
+
+<br><br>
+
+
+<br><br>
+
+<button type="submit">Login</button>
+
+<br><br>
+
+<center>
+Not a member? <a href="gymregister.php">Register Here</a>
+</center>
+
+</form>
+</div>
+
+<div class="button1">
+<a href="mainpage1.html">BACK </a>
+</div>
+
+
+
+
+<footer>
+<p>Contact:gymfinder@gmail.com 2026 Gym Finder</p>
+</footer>
+
+</body>
+</html>

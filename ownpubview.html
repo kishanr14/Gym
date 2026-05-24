@@ -1,0 +1,205 @@
+<?php
+
+session_start();
+mysql_connect("localhost","root","");
+mysql_select_db("gym");
+
+/* Get business id */
+
+	$ss=$_SESSION["busineid"];
+
+
+/* Fetch bookings */
+$sql = "select * from booking where gym_id='$ss'";
+$rs = mysql_query($sql);
+
+?>
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+
+<title>View Bookings</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef5ff;
+margin:0;
+}
+
+/* Header */
+.header{
+background:#2a5298;
+color:white;
+padding:15px;
+text-align:center;
+font-size:22px;
+position:relative;
+}
+
+/* Back Button */
+.back{
+position:absolute;
+left:15px;
+top:15px;
+color:white;
+text-decoration:none;
+font-size:16px;
+}
+
+/* Status Buttons */
+.status-bar{
+text-align:center;
+background:white;
+padding:15px;
+box-shadow:0 2px 5px gray;
+}
+
+.status-bar a{
+text-decoration:none;
+}
+
+.status-btn{
+background:#2a5298;
+color:white;
+border:none;
+padding:10px 18px;
+margin:5px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.status-btn:hover{
+background:#1d3d73;
+}
+
+/* Table */
+table{
+margin:auto;
+margin-top:30px;
+border-collapse:collapse;
+width:90%;
+background:white;
+box-shadow:0 0 10px gray;
+}
+
+th,td{
+padding:12px;
+border:1px solid #ccc;
+text-align:center;
+}
+
+th{
+background:#2a5298;
+color:white;
+}
+
+/* Footer */
+.footer{
+background:#2a5298;
+color:white;
+text-align:center;
+padding:10px;
+position:fixed;
+bottom:0;
+width:100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<a href="dashboard.php" class="back">⬅️ Back</a>
+View Bookings
+</div>
+
+<!-- Status Buttons -->
+<div class="status-bar">
+
+<a href="pending.php">
+<button class="status-btn">Pending</button>
+</a>
+
+<a href="approved.php">
+<button class="status-btn">Approved</button>
+</a>
+
+<a href="rejected.php">
+<button class="status-btn">Rejected</button>
+</a>
+
+<a href="completed.php">
+<button class="status-btn">Completed</button>
+</a>
+<a href="billed.php">
+<button class="status-btn">Billed</button>
+</a>
+
+
+</div>
+
+<table>
+
+<tr>
+<th>Booking ID</th>
+<th>Gym Id</th>
+<th>Gym Name</th>
+<th>Gym Type</th>
+<th>Package</th>
+<th>Age Limit</th>
+<th>Customer Name</th>
+<th>Date of Birth</th>
+<th>Phone Number</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+<?php
+
+$count = 0;
+
+while($row = mysql_fetch_array($rs))
+{
+$count++;
+
+echo "<tr>";
+
+echo "<td>".$row['booking_id']."</td>";
+echo "<td>".$row['gym_id']."</td>";
+echo "<td>".$row['gym_name']."</td>";
+echo "<td>".$row['gym_type']."</td>";
+echo "<td>".$row['package']."</td>";
+echo "<td>".$row['agelim']."</td>";
+echo "<td>".$row['custname']."</td>";
+echo "<td>".$row['dob']."</td>";
+echo "<td>".$row['pho']."</td>";
+echo "<td>".$row['status']."</td>"; 
+echo"<td><a href='update_status.php?bid=".$row['booking_id']."'>
+<button style=\"background:#2a5298;color:white;border:none;padding:6px 12px;border-radius:5px;cursor:pointer;\">Update</button></a></td>"; 
+
+echo "</tr>";
+}
+
+/* No bookings case */
+if($count==0)
+{
+echo "<tr><td colspan='10' style='color:red;'>No Bookings Found</td></tr>";
+}
+
+?>
+
+</table>
+
+<div class="footer">
+© Vehicle Service System
+</div>
+
+</body>
+
+</html

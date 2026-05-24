@@ -1,0 +1,231 @@
+<html>
+<head>
+<style>
+.buttons a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:absolute;
+		top:20px;
+		left:1200px;
+	       }
+
+	.buttons a:hover{
+		background:black;
+		color:white;
+		}
+
+.button a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:absolute;
+		top:20px;
+		left:1200px;
+	       }
+
+	.button a:hover{
+		background:black;
+		color:white;
+		}
+
+.button1 a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:absolute;
+		top:20px;
+		left:1280px;
+	       }
+
+	.button1 a:hover{
+		background:black;
+		color:white;
+		}
+.button2 a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:absolute;
+		top:20px;
+		left:1400px;
+	       }
+
+	.button2 a:hover{
+		background:black;
+		color:white;
+		}
+
+
+
+
+
+
+
+
+
+header
+{
+   background-color:black;
+   color:white;
+   text-align:center;
+   right:0px;
+   position:fixed;
+   width:100%;
+   top:0px;
+   
+}
+
+body
+{
+    font-family: Arial;
+    background-image:url("gym6.png");
+    background-size:cover;
+}
+
+.title
+{
+    position:absolute;
+    left:390px;
+    top:10px;
+    color:white;
+}
+
+.title h1
+{
+    font-size:50px;
+}
+
+.loginbox
+{
+    width:350px;
+    height:400px;
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    position:absolute;
+    right:580px;
+    top:130px;
+}
+
+.loginbox h1
+{
+
+}
+
+input[type=text], input[type=password],input[type=date]
+{
+    width:250px;
+    height:25px;
+    border-radius:2px;
+    border:1px solid gray;
+    margin-top:8px;
+    border-radius:10px;
+    background:#D3D3D3;
+}
+
+
+
+button
+{
+    width:100%;
+    height:40px;
+    background:#1e6bd6;
+    border:none;
+    color:white;
+    font-size:16px;
+    border-radius:5px;
+    margin-top:15px;
+}
+
+a
+{
+    text-decoration:none;
+    font-size:13px;
+}
+footer
+{ 
+   background-color:black;
+   color:white;
+   text-align:center;
+   position:fixed;
+   bottom:0px;
+   width:100%;
+   left:0;
+   font-size:20px;
+}
+
+
+
+</style>
+</head>
+<body>
+<header>
+
+<h1>GYM    MANAGEMENT    SYSTEM</h1>
+</header>
+<div class="loginbox">
+
+<label><center><h1>ENTER DETAILS </h1></center></label><br>
+
+
+<?php
+$con=mysql_connect("localhost","root","");
+mysql_select_db("gym",$con);
+
+$sql="select * from custid";
+$rs=mysql_query($sql);
+$record=mysql_fetch_array($rs);
+$bookid=$record[0];
+$new_id=$bookid;
+?>
+
+<label>Booking Id</label><br>
+<input type="text" name="bookid">
+<br><br>
+ 
+
+<label>Username</label><br>
+<input type="text" name="uname" placeholder="Enter your Username">
+<br><br>
+
+
+<label>Date Of Birth</label><br>
+<input type="date" name="dob">
+<br><br>
+
+<label>Phone Number</label><br>
+<input type="text" name="cno" placeholder="Enter Phone Number">
+
+
+<button>Submit</button>
+</div>
+<div class="buttons">
+<a href="#">Back<br></a>
+</div>
+
+<footer>
+<p>Contact:gymfinder@gmail.com 2026 Gym Finder</p>
+</footer>
+</body>
+</html>

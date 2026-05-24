@@ -1,0 +1,337 @@
+<html>
+<head>
+<style>
+.buttons a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:absolute;
+		top:20px;
+		left:1050px;
+	       }
+
+	.buttons a:hover{
+		background:black;
+		color:white;
+		}
+
+.button a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:absolute;
+		top:20px;
+		left:1150px;
+	       }
+
+	.button a:hover{
+		background:black;
+		color:white;
+		}
+
+.button1 a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:absolute;
+		top:20px;
+		left:1250px;
+	       }
+
+	.button1 a:hover{
+		background:black;
+		color:white;
+		}
+.button2 a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:absolute;
+		top:20px;
+		left:1350px;
+	       }
+
+	.button2 a:hover{
+		background:black;
+		color:white;
+		}
+
+header
+{
+	background-color:black;
+	text-align:center;
+	color:white;
+	padding:15px;
+	padding-top:10px;
+	position:fixed;
+	top:0;
+	width:100%;
+}
+
+
+.name
+{
+	position:fixed;
+	left:520px;
+	top:30px;
+	color:white;
+}
+.name h1
+{
+	font-size:35px
+}
+h2
+{
+	border:none;
+        border-radius:4px;
+        width:300px;
+        height:40px;
+        text-align:center;
+        position:fixed;
+        left:-10px;
+        top:-20px;
+        font-family:times new roman;
+        font-size:15px;
+        color:black;
+	font-weight:bold;
+}
+
+.login 
+{
+	border:none;
+  	border-radius:10px;
+  	width:460px;
+  	height:550px;
+  	text-align:left;
+  	background:#F5F5DC;
+  	color:black;
+  	position:relative;
+  	left:500px;
+  	top:30px;
+	font-weight:bold;
+	font-family:bell mt;
+	padding:30px;
+	font-weight:bold;
+	font-size:16px;
+	margin-top:60px;
+        margin-bottom:120px;
+}
+
+
+
+input[type=text]
+{
+	border:2px solid grey;
+	color:white
+	font-family:bell mt;
+	height:25px;
+	width:350px;
+	text-align:center;
+	border-radius:10px;
+	background:#D3D3D3;
+}
+
+
+textarea
+{
+	border:2px solid grey;
+	color:white
+	font-family:bell mt;
+	height:80px;
+	text-align:center;
+	border-radius:10px;
+	width:350px;
+	background:#D3D3D3;
+	 
+	
+}
+
+input[type=file]
+{
+	border:2px solid grey;
+	font-family:bell mt;
+	height:25px;
+	text-align:center;
+	border-radius:10px;
+	width:300px;
+	background:#D3D3D3;
+}
+
+input[type=time]
+{
+	border:2px solid grey;
+	font-family:bell mt;
+	height:25px;
+	text-align:center;
+	border-radius:10px;
+	width:30px;
+	
+
+}
+	border:3px solid grey;
+	font-family:times new roman;
+	height:30px;
+	text-align:center;
+	width:150px;
+	height:25px;
+	color:black;
+	background:#D3D3D3;
+	position:relative;
+	left:-10px;
+	font-weight:bold;
+}
+
+input[type=submit]
+{
+
+input[type=reset]
+{
+	border:3px solid grey;
+	font-family:times new roman;
+	height:25px;
+	text-align:center;
+	width:150px;
+	height:20px;
+	color:black;
+	background:#D3D3D3;
+	position:relative;
+	left:20px;
+	font-weight:bold;
+}
+
+input[type=submit]:hover
+{
+	background-color:white;
+}
+
+input[type=reset]:hover
+{
+	background-color:white;
+}
+
+
+
+
+
+.login h1
+{
+	font-size:18px;
+}
+
+input::placeholder
+{
+	color:black;
+}
+
+
+footer
+{
+        background:black;
+	text-align:center;
+	padding:10px;
+	position:fixed;
+	bottom:0;
+	width:100%;
+	color:white;
+}
+
+
+
+</style>
+</head>
+<body background="gym6.png">
+<header>
+GYM MANAGEMENT SYSTEM
+</header>
+<form method="post" action="regche.php">
+<div class="login">
+<center><h1><font>REGISTRATION FORM</h1>
+
+
+
+<input type="text" name="uname" placeholder="Enter Gym Name"><br><br>
+
+<input type="text" name="oname" placeholder="Enter Owner Name"><br><br>
+
+Enter Location:<br>
+<textarea rows=6 cols=22 name="address" placeholder="Enter Location"></textarea><br><br>
+
+<input type="text"  name="cno" placeholder="Enter contact no"><br><br>
+
+<input type="text" name="emailid" placeholder="Enter email id"<br><br><br>
+
+<?php
+$con=mysql_connect("localhost","root","");
+mysql_select_db("gym",$con);
+
+$sql="select * from idcount";
+$rs=mysql_query($sql);
+$record=mysql_fetch_array($rs);
+ 
+
+<input type="text" name="buid" readonly value="<?php echo $record[0];?>"<br><br><br>
+
+Upload Id Proof:
+<input type="file" name="photo"><br><br>
+
+Opening Time:&nbsp&nbsp
+<input type="time" name="otime"><br><br>
+
+Closing Time:&nbsp&nbsp
+<input type="time" name="ctime"><br><br>
+
+<input type="submit" value="REGIESTER">
+<input type="reset" value="CLEAR">
+
+
+</div>
+<footer>
+Contact:gymfinder@gmail.com
+2026 Gym Finder
+</footer>
+</form>
+<div class="buttons">
+<a href="mainpage1.html">Back</a>
+</div>
+
+<div class="button">
+<a href="ownerlogin.html">Login</a>
+</div>
+
+<div class="button1">
+<a href="userlog.html">User</a>
+</div>
+
+<div class="button2">
+<a href="ownreg.php">View Details</a>
+</div>
+
+
+</div>
+</body>
+</html>
+
+
+
+
+

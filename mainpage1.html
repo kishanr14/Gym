@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>My Website</title>
+<style>
+body{
+    margin:0;
+    font-family: "Times New Roman", serif;
+    background-size:cover;
+    background-position:center;
+    height:100vh;
+}
+
+/* Header */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background: rgba(0,0,0,0.6);
+}
+
+/* Logo */
+.logo{
+    font-size:28px;
+    color:white;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+/* Buttons */
+.buttons a{
+    text-decoration:none;
+    background:white;
+    color:black;
+    padding:10px 20px;
+    border-radius:25px;
+    margin-left:10px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.buttons a:hover{
+    background:black;
+    color:white;
+}
+
+/* Center content */
+.content{
+    text-align:right;
+    color:white;
+    margin-top:90px;
+    background:rgba(0,0,0,0.5);
+    padding:40px;
+    backdrop-filter:blur(5px);
+    width:50%;
+    margin-left:auto;   /* push to right */
+    margin-right:60px;  /* spacing from edge */
+    border-radius:10px;
+}
+
+/* Heading styles */
+.content h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.content h2{
+    font-size:22px;
+    font-weight:normal;
+    line-height:1.6;
+}
+</style>
+</head>
+
+<body background="gym.png">
+
+<div class="header">
+
+<div class="logo">Gym Website</div>
+
+<div class="buttons">
+
+<a href="viewpublic.php">Public</a>
+<a href="ownlogin.html">Gym Owner</a>
+<a href="status.html">Admin</a>
+
+
+</div>
+
+</div>
+
+<div class="content">
+<h1>Welcome to Gym Management</h1>
+<h2>Discover and explore all gyms in your city in one<br>
+place. Compare facilities, services, trainers and<br>
+equipments to find the perfect fitness destination for <br>
+your goals</h2>
+</div>
+
+</body>
+</html>

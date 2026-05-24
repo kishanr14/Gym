@@ -1,0 +1,263 @@
+
+<html>
+
+<head>
+<script>
+
+
+		function logincheck()
+		{
+				n=document.login.uname.value;
+				p=document.login.passw.value;
+	
+				if(n=="")
+				{
+					alert("Please Enter User Name");
+					document.login.uname.focus();
+					return false;
+				}
+				else if(p=="")
+				{
+					alert("Please Enter Password");
+					document.login.passw.focus();
+					return false;
+				}
+				else if(n=="gymname" && p=="abcd1234")
+				{
+						alert("valid Account");
+				}
+				else
+				{
+					 	alert("invalid user name or password");	
+						document.login.uname.value="";
+						document.login.passw.value="";
+						document.login.uname.focus();
+						return false;	
+					}
+
+		}
+
+
+
+
+</script>
+<style>
+
+.buttons a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:fixed;
+		top:60px;
+		left:1220px;
+	       }
+
+	.buttons a:hover{
+		background:black;
+		color:white;
+		}
+
+.button1 a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:fixed;
+		top:60px;
+		left:1120px;
+	       }
+
+	.button1 a:hover{
+		background:black;
+		color:white;
+		}
+
+
+.button a{
+		text-decoration:none;
+		background:white;
+		color:black;
+		padding:10px 20px;
+		border-radius:25px;
+		margin-left:10px;
+		font-weight:bold;
+		transition:0.3s;
+		position:fixed;
+		top:60px;
+		left:1350px;
+	       }
+
+	.button a:hover{
+		background:black;
+		color:white;
+		}
+
+header
+{
+   background-color:black;
+   color:white;
+   text-align:center;
+   right:0px;
+   position:fixed;
+   width:100%;
+   top:0px;
+   
+}
+
+header h1{
+margin:0;
+}
+
+body
+{
+    font-family: Arial;
+    background-image:url("gym4.png");
+    background-size:cover;
+    width:100
+}
+
+.title
+{
+    position:absolute;
+    left:390px;
+    top:10px;
+    color:white;
+}
+
+.title h1
+{
+    font-size:50px;
+}
+
+.loginbox
+{
+    width:350px;
+    height:340px;
+    background:rgba(0,0,0,0.75);   /* Dark transparent shade */
+    backdrop-filter:blur(6px);     /* Glass effect */
+    box-shadow:0 0 20px rgba(255,215,0,0.4); /* Golden glow */
+    border-radius:15px;
+    padding:50px;
+    position:absolute;
+    right:560px;
+    top:150px;
+    color:white;
+}
+
+input[type=text], input[type=password]
+{
+    width:100%;
+    height:35px;
+    border-radius:5px;
+    border:1px solid gray;
+    margin-top:8px;
+}
+
+button
+{
+    width:100%;
+    height:40px;
+    background:#1e6bd6;
+    border:none;
+    color:white;
+    font-size:16px;
+    border-radius:5px;
+    margin-top:15px;
+}
+
+a
+{
+    text-decoration:none;
+    font-size:13px;
+}
+
+img
+{
+   border=none;
+   border-radius:300px;
+   height=60px;
+   width=60px;
+   position:absolute;
+   left:300px;
+   top:40px;
+}
+
+footer
+{ 
+   background-color:black;
+   color:white;
+   text-align:center;
+   position:fixed;
+   bottom:0px;
+   width:100%;
+   left:0;
+   font-size:20px;
+}
+</style>
+</head>
+  
+<body>
+<img src=gym6.jpeg height=60 width=60>
+
+<div class="title">
+
+<header>
+<h1>GYM    MANAGEMENT    SYSTEM</h1>
+</header>
+
+</div>
+
+
+<div class="loginbox">
+
+
+
+<label><center><h2>LOG IN FORM</label></h2></center><br>
+<form method="post" action="loginche.php" name="login" onsubmit="return logincheck()">
+
+
+<label>Username</label><br>
+<input type="text"  name="uname" placeholder="Enter your Username">
+
+<br><br>
+
+<label>Password</label><br>
+<input type="password"  name="passw" placeholder="Enter Password">
+
+<br><br>
+
+
+
+<br><br>
+
+<button type="submit">Login</button>
+</form>
+</div>
+
+<div class="button1">
+<a href="mainpage1.html">BACK </a>
+</div>
+
+<div class="buttons">
+<a href="viewpublic.php">PUBLIC</a>
+</div>
+
+<div class="button">
+<a href="ownlogin.html">GYMOWNER</a>
+</div>
+
+<footer>
+<p>Contact:gymfinder@gmail.com 2026 Gym Finder</p>
+</footer>
+
+</body>
+</html>
